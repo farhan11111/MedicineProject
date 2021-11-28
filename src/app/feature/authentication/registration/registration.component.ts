@@ -20,14 +20,16 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  onSummit(): void {
-    this.service.createUser(this.userForm.value).subcribe(
-      (result: any) => {
-        console.log('result=', result);
+   onSubmit(): void {
+    console.log(this.userForm.value);
+    this.service.createUser(this.userForm.value).subscribe(
+      (result) => {
+        console.log('Result:- ', result);
       },
-      (error: any) => {
-        console.log('error=', error);
+      (error) => {
+        console.log('Error:-', error);
       }
     );
   }
 }
+

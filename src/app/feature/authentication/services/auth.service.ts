@@ -9,12 +9,13 @@ export class authService {
 
   constructor(private http: HttpClient) { }
   
-  private table name: string= "users.json";
+  private table_name: string= "users.json";
   
 //Store data to Firebase Realtime Database
   
-  createUser (user: any) (
+  createUser (user: any) {
   
   return this.http.post(environment.apiUrl + this.table_name, user);
   
   }
+}
